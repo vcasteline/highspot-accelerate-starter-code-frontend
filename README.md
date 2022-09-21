@@ -1,0 +1,1 @@
+# highspot-accelerate-starter-code-frontend

@@ -1,5 +1,4 @@
 .App {
-  background-color: #676a71;
   background-color: #172A3A;
   min-height: 100vh;
 }
@@ -18,7 +17,7 @@
   text-align: center;
   
 }
-
+/* Loader */
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -74,14 +73,10 @@
     transform: translate(24px, 0);
   }
 }
-@font-face {
-  font-family: 'Pronema';
-  src: url(/public/fonts/pronema-serif.otf);
-}
+
 .title{
   display: flex;
   justify-content: center;
-  color: antiquewhite;
   color: #09BC8A;
   font-size: 40px;
   
@@ -147,6 +142,24 @@
     font-size: 26px;
     text-align: center;
   }
+}
+.header{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+ width: 0%;
 }
 
 @media only screen and (max-width: 360px) {

@@ -3,8 +3,6 @@
   display: flex;
   width: 400px;
   padding: 1rem;
-  background-color: rgb(40, 51, 58);
-  background-color: #004346;
   background: rgb(14,116,91);
   background: linear-gradient(0deg, rgba(14,116,91,1) 0%, rgba(0,67,70,1) 69%);
   color: antiquewhite;
@@ -19,8 +17,7 @@
   transform: scale(1.05);
 }
 .cardText{
-  /* margin-left: 18px;
-  margin-right: 25px; */
+
   padding-right: 10px;
   padding-left: 8px;
 
@@ -30,8 +27,7 @@
   color: #09BC8A;
 }
 .cardImage{
-  /* width: 100%; */
-  /* display: grid; */
+  
   justify-content: center;
 }
 .image{

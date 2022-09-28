@@ -4,12 +4,15 @@ import { Card } from "../Card";
 import { fetchCards } from "../../api/api";
 
 export function App() {
+
   const [cards, setCards] = useState([]);
   const [fetching, setFetching] = useState(true);
   let [page, setPage] = useState(1);
   const [query, setQuery] = useState("")
+  const [progress, setProgress] = useState(0);
 
-  const searchCards = (e) =>{
+
+  const searchCards = (e) =>{ //load the searched cards
     e.preventDefault();
     if(query===""){
       setPage(0);
@@ -20,8 +23,7 @@ export function App() {
       setCards(responseData.cards);
     }).finally(setFetching(false));
   }
-  const loadCards = () =>{
-    //load the first 20 cards
+  const loadCards = () =>{ //load the first 20 cards
     setCards([]);
     setPage(1);
     setFetching(true);
@@ -29,38 +31,46 @@ export function App() {
       fetchCards(1).then((actualData) => setCards(actualData.cards))
       .finally(setFetching(false));
     }, 1000)
-
+    
   }
-  const loadMoreCards = () => {   
+  const loadMoreCards = () => { //load more cards when user is at the bottom
     setFetching(true);
     setTimeout(()=>{
     fetchCards(page).then((actualData) => setCards(oldCards => [...oldCards, ...actualData.cards]))
     .finally(setFetching(false));
     }, 1000)
     setPage(page++);
-   
   }
-
-  const infiniteScrolling = () => {
+  const updateProgress = () => { //progress bar calculation
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    setProgress(scrolled);
+    
+  }
+  const infiniteScrolling = () => { //check if user has reached bottom of the page
   
     const bottomMinus = (window.innerHeight + document.documentElement.scrollTop) >= document.documentElement.offsetHeight-0.5;
     const bottom = (window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight;
     
-    if ((bottom || bottomMinus) && query==="") {//if reached the end of the page
+    if ((bottom || bottomMinus) && query==="") {
     
       loadMoreCards();
     }
 
   }
+
   useEffect(() => {
     // Fetch the cards using the API endpoint
    
     window.addEventListener('scroll', infiniteScrolling);
+    window.addEventListener('scroll', updateProgress)
+
     if(query===""){
       loadCards();
     }
     return () => window.removeEventListener("scroll", infiniteScrolling);
-  
+   
   },[query]);
   
   return (
@@ -75,6 +85,12 @@ export function App() {
         </form>
        
       </div>
+      <div className="header">
+        <div className="progress-container">
+          <div className="progress-bar" style={{width:`${progress}%`}} id="myBar"></div>
+        </div>
+      </div>
+      
       <div className="App-cardlist" role="list">
         
         {
@@ -83,7 +99,6 @@ export function App() {
         ): 
         <div></div>
         }
-        {/* Render each card returned from the API */}
       </div>
       
       <div className="Loader">

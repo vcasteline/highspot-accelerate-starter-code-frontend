@@ -1,4 +1,3 @@
-import axios from "axios";
 
 const BASE_URL = "https://api.elderscrollslegends.io/v1";
 

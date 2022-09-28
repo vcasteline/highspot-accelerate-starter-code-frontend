@@ -83,11 +83,12 @@
   justify-content: center;
   color: antiquewhite;
   color: #09BC8A;
-  font-size: 45px;
+  font-size: 40px;
   
 }
 .titleText{
   margin-top: 60px;
+  text-align: center;
 
 }
 .logo{
@@ -127,7 +128,7 @@
   color: antiquewhite;
 }
 
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 414px) {
   .titleImage{
     width: 100%;
     height: auto;

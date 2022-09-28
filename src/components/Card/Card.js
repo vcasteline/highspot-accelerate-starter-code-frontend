@@ -3,7 +3,7 @@ import "./Card.css";
 export function Card({ cardData }) {
   return <div className="Card">
     <div className="cardImage">
-      <img className="image" src={cardData.imageUrl}/>
+      <img alt="" className="image" src={cardData.imageUrl}/>
     </div>
     <div className="cardText">
       <p className="cardTitle"><b>{cardData.name}</b></p>

@@ -5,14 +5,19 @@
   padding: 1rem;
   background-color: rgb(40, 51, 58);
   background-color: #004346;
+  background: rgb(14,116,91);
+  background: linear-gradient(0deg, rgba(14,116,91,1) 0%, rgba(0,67,70,1) 69%);
   color: antiquewhite;
   border-radius: 30px;
-  border-style: solid;
   border-color: transparent;
   margin-bottom: 20px;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  transition: all .2s ease-in-out;
 }
 
+.Card:hover{
+  transform: scale(1.05);
+}
 .cardText{
   /* margin-left: 18px;
   margin-right: 25px; */

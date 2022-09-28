@@ -1,8 +1,170 @@
 .App {
-  background-color: #282c34;
+  background-color: #676a71;
+  background-color: #172A3A;
   min-height: 100vh;
 }
 
 .App-cardlist {
   /* Complete the card list styles here */
+  display: grid;
+  padding: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+.Loader{
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+  
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+@font-face {
+  font-family: 'Pronema';
+  src: url(/public/fonts/pronema-serif.otf);
+}
+.title{
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  color: #09BC8A;
+  font-size: 45px;
+  
+}
+.titleText{
+  margin-top: 60px;
+
+}
+.logo{
+  height: 100px;
+  margin-top: 25px;
+}
+.titleImage{
+  height: 200px;
+
+}
+
+.searchBar{
+  border-radius: 20px;
+  width: 300px;
+  height: 30px;
+  border-color: transparent;
+  text-align: center;
+  background-color: antiquewhite;
+
+}
+.Search{
+ display: flex;
+ justify-content: center;
+}
+.searchButton{
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border-color: transparent;
+  background-color:#09BC8A;
+  color: #004346;
+  cursor: pointer;
+}
+.searchButton:hover{
+  background-color: #004346;
+  color: antiquewhite;
+}
+
+@media only screen and (max-width: 412px) {
+  .titleImage{
+    width: 100%;
+    height: auto;
+  }
+  .App-cardlist{
+    padding: 30px;
+  }
+  .searchBar{
+    width: 243px;
+  }
+  .searchButton:hover{
+    background-color: #004346;
+    color: antiquewhite;
+  }
+  .title{
+    font-size: 26px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .titleImage{
+    width: 100%;
+    height: auto;
+  }
+  .App-cardlist{
+    padding: 18px;
+  }
+  .searchBar{
+    width: 243px;
+  }
+  .title{
+    font-size: 26px;
+    text-align: center;
+  }
+  .searchButton:hover{
+    background-color: #004346;
+    color: antiquewhite;
+  }
 }

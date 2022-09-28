@@ -1,3 +1,49 @@
 .Card {
   /* Complete card styles here */
+  display: flex;
+  width: 400px;
+  padding: 1rem;
+  background-color: rgb(40, 51, 58);
+  background-color: #004346;
+  color: antiquewhite;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: transparent;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+
+.cardText{
+  /* margin-left: 18px;
+  margin-right: 25px; */
+  padding-right: 10px;
+  padding-left: 8px;
+
+}
+.cardTitle{
+  font-size: larger;
+  color: #09BC8A;
+}
+.cardImage{
+  /* width: 100%; */
+  /* display: grid; */
+  justify-content: center;
+}
+.image{
+  width: 200px;
+}
+
+@media only screen and (max-width: 415px) {
+  .Card{
+    width: 73%;
+    margin-bottom: 0;
+  }
+  .image{
+    width: 118px;
+    
+  }
+  .cardText{
+    padding-left: 22px;
+  }
+  
 }
